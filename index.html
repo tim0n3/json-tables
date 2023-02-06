@@ -1,29 +1,11 @@
-﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+﻿<html>
 <head>
-    <meta charset="utf-8" />
-    <title>JSON Tables</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <textarea id="jsonText"></textarea>
     <button id="tabulateButton">Tabulate</button>
+    <input type="text" id="filterInput" placeholder="Filter by type, time, ID, text, or source">
     <table id="logTable">
         <tr>
             <th>Type</th>
@@ -34,33 +16,7 @@
         </tr>
     </table>
 
-    <script>
-      document.getElementById("tabulateButton").addEventListener("click", function() {
-        var jsonText = document.getElementById("jsonText").value;
-        var logs = JSON.parse(jsonText);
-        var logTable = document.getElementById("logTable");
-
-        for (var i = 0; i < logs[0].log.length; i++) {
-          var log = logs[0].log[i];
-          var row = logTable.insertRow();
-
-          var typeCell = row.insertCell(0);
-          typeCell.innerHTML = log.type;
-
-          var timeCell = row.insertCell(1);
-          timeCell.innerHTML = log.time;
-
-          var idCell = row.insertCell(2);
-          idCell.innerHTML = log.id;
-
-          var textCell = row.insertCell(3);
-          textCell.innerHTML = log.text;
-
-          var sourceCell = row.insertCell(4);
-          sourceCell.innerHTML = log.source;
-        }
-      });
-    </script>
-
+    <script src="tabulate.js"></script>
+    <script src="filter.js"></script>
 </body>
 </html>

@@ -6,7 +6,12 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DC1EBE90-A33A-44D1-8236-FF5F3E5DC108}"
 	ProjectSection(SolutionItems) = preProject
 		index.html = index.html
+		filter.js = filter.js
+		filter.js.broken = filter.js.broken
 		sample-data.txt = sample-data.txt
+		style.css = style.css
+		tabulate.js.broken = tabulate.js.broken
+		tabulate.js = tabulate.js
 	EndProjectSection
 EndProject
 Global
